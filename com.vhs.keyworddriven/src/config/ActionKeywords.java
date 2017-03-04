@@ -494,8 +494,7 @@ public class ActionKeywords extends JFrame {
     						  emul.setCapability ("appPackage","com.android.chrome");
     						  emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
     						  emul.setCapability ("udid","192.168.56.101:5555" );
-    						
-    						  driver = new AndroidDriver <WebElement> (new URL ("http://" + sIpAddress + ":"+5555+"/wd/hub"),
+    						  driver = new AndroidDriver <WebElement> (new URL ("http://" + sIpAddress + ":"+4723+"/wd/hub"),
     						          emul);   			
       					}
     					else
@@ -507,7 +506,7 @@ public class ActionKeywords extends JFrame {
     						emul.setCapability ("appPackage","com.android.chrome");
     						emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
     						emul.setCapability ("udid","192.168.56.101:5555" );
-    						driver = new AndroidDriver <WebElement> (new URL ("http://" + sIpAddress + ":"+5555+"/wd/hub"),
+    						driver = new AndroidDriver <WebElement> (new URL ("http://" + sIpAddress + ":"+4723+"/wd/hub"),
     						          emul);   	
 
     					}
