@@ -484,33 +484,28 @@ public class ActionKeywords extends JFrame {
     					if(sPlatformVersion.equals("2.3") || sPlatformVersion.equals("2.3.2") || sPlatformVersion.equals("2.3.3") || sPlatformVersion.equals("2.3.7") || sPlatformVersion.equals("3.1") || sPlatformVersion.equals("3.2") || sPlatformVersion.equals("3.2.6") || sPlatformVersion.equals("4.0") || sPlatformVersion.equals("4.0.2") || sPlatformVersion.equals("4.0.3") || sPlatformVersion.equals("4.0.4") || sPlatformVersion.equals("4.1") || sPlatformVersion.equals("4.1.2"))
     					{
     					
-    						DesiredCapabilities capabilities = new DesiredCapabilities();
-    				    	capabilities.setCapability("automationName", "Selendroid"); 
-    						capabilities.setCapability("deviceName", sDeviceName);
-    						capabilities.setCapability("platformName", sPlatformName);
-    						capabilities.setCapability("platformVersion", sPlatformVersion);
-    						capabilities.setCapability("appPackage", "");
-    						capabilities.setCapability("appActivity", "");
-    						//capabilities.setCapability(CapabilityType.BROWSER_NAME, sBrowserName);
-    						File f = new File(sAppPath);
-    						capabilities.setCapability("app", f.getAbsolutePath());    	
+    						DesiredCapabilities emul= new DesiredCapabilities ();
+    						  emul.setCapability ("deviceName",sDeviceName );
+    						  emul.setCapability ("platformName", sPlatformName);
+    						  emul.setCapability ("platformVersion", sPlatformVersion);
+    						  emul.setCapability ("appPackage","com.android.chrome");
+    						  emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
+    						  emul.setCapability ("udid","192.168.56.101:5555" );
     						
-    						driver = new AndroidDriver(new URL("http://"+sIpAddress+":4723/wd/hub"),capabilities);
-   			
+    						  driver = new AndroidDriver <WebElement> (new URL ("http://" + sIpAddress + ":"+5555+"/wd/hub"),
+    						          emul);   			
       					}
     					else
     					{
-    				    		
-    						DesiredCapabilities capabilities = new DesiredCapabilities();
-    						capabilities.setCapability("deviceName", sDeviceName);
-    						capabilities.setCapability("platformName", sPlatformName);
-    						capabilities.setCapability("platformVersion", sPlatformVersion);
-    						capabilities.setCapability("appPackage", "");
-    						capabilities.setCapability("appActivity", "");
-    						File f = new File(sAppPath);
-    						capabilities.setCapability("app", f.getAbsolutePath());
-    						
-    						driver = new AndroidDriver(new URL("http://"+sIpAddress+":4723/wd/hub"),capabilities);
+    						DesiredCapabilities emul= new DesiredCapabilities ();
+    						emul.setCapability ("deviceName",sDeviceName );
+    						emul.setCapability ("platformName", sPlatformName);
+    						emul.setCapability ("platformVersion", sPlatformVersion);
+    						emul.setCapability ("appPackage","com.android.chrome");
+    						emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
+    						emul.setCapability ("udid","192.168.56.101:5555" );
+    						driver = new AndroidDriver <WebElement> (new URL ("http://" + sIpAddress + ":"+5555+"/wd/hub"),
+    						          emul);   	
 
     					}
     				}
