@@ -480,6 +480,9 @@ public class ActionKeywords extends JFrame {
     			        executor.setExitValue(1);
     			        executor.execute(launchEmul, resultHandler);
     			        
+    					
+    					 /*Runtime.getRuntime ().exec ("open -a " + "/Applications/Genymotion.app/Contents/MacOS/player.app"
+    					          + " --args --vm-name " + "GoogleNexus");*/
 
     					if(sPlatformVersion.equals("2.3") || sPlatformVersion.equals("2.3.2") || sPlatformVersion.equals("2.3.3") || sPlatformVersion.equals("2.3.7") || sPlatformVersion.equals("3.1") || sPlatformVersion.equals("3.2") || sPlatformVersion.equals("3.2.6") || sPlatformVersion.equals("4.0") || sPlatformVersion.equals("4.0.2") || sPlatformVersion.equals("4.0.3") || sPlatformVersion.equals("4.0.4") || sPlatformVersion.equals("4.1") || sPlatformVersion.equals("4.1.2"))
     					{

@@ -21,9 +21,12 @@ public class StartAndStopAppium
 
 	public static void startAppiumServer() throws IOException, InterruptedException {
 
-	service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(NODEJSPATH)).withAppiumJS(new File(APPIUMJSPATH)).withLogFile(new File(APPIUMLOGFILEPATH)));
+	/*service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(NODEJSPATH)).withAppiumJS(new File(APPIUMJSPATH)).withLogFile(new File(APPIUMLOGFILEPATH)));
 	
-	service.start();
+	service.start();*/
+		
+    service = AppiumDriverLocalService.buildDefaultService();
+    service.start();
 		
 
 	System.out.println("Appium server started");
@@ -34,9 +37,9 @@ public class StartAndStopAppium
 
 	public static void stopAppiumServer() throws IOException {
 
-	service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(NODEJSPATH)).withAppiumJS(new File(APPIUMJSPATH)).withLogFile(new File(APPIUMLOGFILEPATH)));
+	//service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingDriverExecutable(new File(NODEJSPATH)).withAppiumJS(new File(APPIUMJSPATH)).withLogFile(new File(APPIUMLOGFILEPATH)));
 		
-	service.stop();
+    service.stop ();
 
 	System.out.println("Appium server stopped");
 
