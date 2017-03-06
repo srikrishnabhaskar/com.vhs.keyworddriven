@@ -479,7 +479,6 @@ public class ActionKeywords extends JFrame {
     			        executor.setExitValue(1);
     			        executor.execute(launchEmul, resultHandler);
     			        
-    			        //Runtime.getRuntime().exec("open -a "+sEmulatorPath+" --args --vm-name "+sDeviceName);
     			        
                         Thread.sleep(75000);
     					if(sPlatformVersion.equals("2.3") || sPlatformVersion.equals("2.3.2") || sPlatformVersion.equals("2.3.3") || sPlatformVersion.equals("2.3.7") || sPlatformVersion.equals("3.1") || sPlatformVersion.equals("3.2") || sPlatformVersion.equals("3.2.6") || sPlatformVersion.equals("4.0") || sPlatformVersion.equals("4.0.2") || sPlatformVersion.equals("4.0.3") || sPlatformVersion.equals("4.0.4") || sPlatformVersion.equals("4.1") || sPlatformVersion.equals("4.1.2"))
@@ -492,10 +491,12 @@ public class ActionKeywords extends JFrame {
     						  emul.setCapability ("platformVersion", sPlatformVersion);
     						  emul.setCapability ("appPackage","com.android.chrome");
       						  emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
-    						  emul.setCapability ("udid",sIpAddress );
-    						
-    						  driver = new AndroidDriver <WebElement> (new URL ("http://127.0.0.1:4723/wd/hub"),
-    						          emul);   			
+    						  emul.setCapability ("udid",sIpAddress );	
+    						  emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
+    						  emul.setCapability ("udid","192.168.56.101:5555" );
+    						  driver = new AndroidDriver <WebElement> (new URL ("http://127.0.0.1:4723/wd/hub"),emul);
+
+    						 			
       					}
     					else
     					{
@@ -508,8 +509,9 @@ public class ActionKeywords extends JFrame {
     						emul.setCapability ("appPackage","com.android.chrome");
     						emul.setCapability ("appActivity","com.google.android.apps.chrome.Main" );
   						    emul.setCapability ("udid",sIpAddress );
-  						    driver = new AndroidDriver <WebElement> (new URL ("http://127.0.0.1:4723/wd/hub"),
-						          emul);   	
+  						    emul.setCapability ("udid","192.168.56.101:5555" );
+                            driver = new AndroidDriver <WebElement> (new URL ("http://127.0.0.1:4723/wd/hub"),
+                             emul);
 
     					}
     				}
