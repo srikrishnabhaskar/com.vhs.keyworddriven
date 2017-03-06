@@ -196,15 +196,36 @@ public void execute_TestCase1() throws Exception
 			if(ExcelUtils.getSheetNames().get(0).equals("Platform"))
 			{
 				System.out.println(ExcelUtils.getSheetNames().get(0));
+				
+				
+
+				
 				if((ExcelUtils.getCellData(0, 0, Constants.Sheet_Platforms)).equals("Platform Name") && (ExcelUtils.getCellData(0, 1, Constants.Sheet_Platforms)).equals("Platform Version") && (ExcelUtils.getCellData(0, 2, Constants.Sheet_Platforms)).equals("Device Name") && (ExcelUtils.getCellData(0, 3, Constants.Sheet_Platforms)).equals("IP Address") && (ExcelUtils.getCellData(0, 4, Constants.Sheet_Platforms)).equals("Sauce User Name") && (ExcelUtils.getCellData(0, 5, Constants.Sheet_Platforms)).equals("Sauce Lab Access Key")&& (ExcelUtils.getCellData(0, 6, Constants.Sheet_Platforms)).equals("AppliTool Api Key") && (ExcelUtils.getCellData(0, 7, Constants.Sheet_Platforms)).equals("App Name")  && (ExcelUtils.getCellData(0, 8, Constants.Sheet_Platforms)).equals("App Path") && (ExcelUtils.getCellData(0, 9, Constants.Sheet_Platforms)).equals("Appium Server Path") && (ExcelUtils.getCellData(0, 10, Constants.Sheet_Platforms)).equals("Emulator Player Path") &&(ExcelUtils.getCellData(0, 11, Constants.Sheet_Platforms)).equals("Browser") && (ExcelUtils.getCellData(0, 12, Constants.Sheet_Platforms)).equals("Cloud Run Mode") && (ExcelUtils.getCellData(0, 13, Constants.Sheet_Platforms)).equals("Platform Run Mode") && (ExcelUtils.getCellData(0, 14, Constants.Sheet_Platforms)).equals("Emulator Run Mode") && (ExcelUtils.getCellData(0, 15, Constants.Sheet_Platforms)).equals("Result"))						
 				{
+					
 					Log.info("Platform Sheet is correct");
 				}
 				
 				else
 				{
+					Log.info(ExcelUtils.getCellData(0, 0, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 1, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 2, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 3, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 4, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 5, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 6, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 7, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 8, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 9, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 10, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 11, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 12, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 13, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 14, Constants.Sheet_Platforms));
+					Log.info(ExcelUtils.getCellData(0, 15, Constants.Sheet_Platforms));
 					JOptionPane.showMessageDialog(null, "Platform sheet is not correct");
-					Log.info("Platform Sheet is not correct");
+					//Log.info("Platform Sheet is not correct");
 					System.exit(0);
 
 				}
